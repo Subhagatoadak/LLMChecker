@@ -1,13 +1,15 @@
 # 🎉 CheckEasy: The Lightning-Fast LLM Detector 🕵️‍♀️
 
+> "Coming to a classroom near you: instant AI-cheater-spotting!" 🤖➡️🛑
+
 **CheckEasy** is your trusty sidekick for sniffing out AI-written homework, essays, or Slack messages. Powered by a multi-agent OpenAI-based system, CheckEasy doesn’t just give you a score—it hands you the juicy evidence behind every verdict. Perfect for professors, TAs, or curious humans who want to check if their colleague really wrote that email. 😉
 
 ---
 
 ## 🚀 Features
 
-* **LLM Score (0–100)**: How likely is this text an AI spin-off? 100 = *definitely* ChatGPT, 0 = *definitely* Shakespeare.
-* **Evidence Extractor**: Bullet-list justification for each score. No more “because I said so.” 📋
+* **LLM Score (0–100)**: How likely is this text an AI spin‑off? 100 = *definitely* ChatGPT, 0 = *definitely* Shakespeare.
+* **Evidence Extractor**: Bullet‑list justification for each score. No more “because I said so.” 📋
 * **Batch Processing**: Upload entire XLSX/CSV files of student responses and questions; get back detailed reports & pivot tables.
 * **Streamlit UI**: Slick sidebar config, progress bars, and expandable result cards. Look, Ma—no console! 💅
 * **Downloadable Reports**: Grab CSVs for detailed & summary results—shareable in meetings or with academic integrity committees.
@@ -51,11 +53,35 @@
    * **Questions** file (XLSX or CSV)
 4. Hit **Run LLM Checker** and watch the magic happen:
 
-   * Progress bar to track multi-agent detective work
+   * Progress bar to track multi‑agent detective work
    * Expand each student’s results for scores & evidence
    * Download detailed & pivoted CSV reports
 
 ---
+
+## 🗂️ Input File Structure
+
+**Student Responses File** (`.xlsx` or `.csv`):
+
+* **Column 1**: `Name` – student identifier
+* **Columns 2…N**: answers, one per question (order must match Questions file)
+
+Example:
+
+| Name  | Answer 1              | Answer 2             | ... |
+| ----- | --------------------- | -------------------- | --- |
+| Alice | "The quick brown ..." | "In conclusion, ..." | ... |
+| Bob   | ...                   | ...                  | ... |
+
+**Questions File** (`.xlsx` or `.csv`):
+
+* Single column, no header
+* Each row is the text of one question, in the same order as answer columns
+
+Example:
+\| What is the capital of France?          |
+\| Describe the process of photosynthesis. |
+\| ...                                     |
 
 ## 🤔 FAQ & Pro Tips
 
@@ -84,5 +110,3 @@
 MIT © \[Subhagato Adak]
 
 ---
-
-> “With CheckEasy, every homework assignment is a game of Clue—and AI is always Colonel Mustard in the lounge.” 💼🔍
